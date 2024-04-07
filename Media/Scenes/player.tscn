@@ -26,8 +26,12 @@ texture = ExtResource("1_di22u")
 [node name="Barrel" type="Sprite2D" parent="Turret"]
 position = Vector2(122, 0)
 rotation = 1.57079
-scale = Vector2(0.14155, -1.92074)
+scale = Vector2(0.142, 1.921)
 texture = ExtResource("1_di22u")
 
 [node name="EndPoint" type="Node2D" parent="Turret/Barrel"]
-position = Vector2(0, 63)
+position = Vector2(0.00378418, -63.5086)
+rotation = -1.74533
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bay1q0f0qlu5k"]
+
+[ext_resource type="Texture2D" uid="uid://bcl5mka8ijb4d" path="res://icon.svg" id="1_saa5p"]
+
+[node name="Explosion" type="CPUParticles2D"]
+emitting = false
+amount = 24
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+texture = ExtResource("1_saa5p")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 350.0
+initial_velocity_max = 700.0
+angular_velocity_min = -0.1
+angular_velocity_max = 252.97
+scale_amount_min = 0.75
+scale_amount_max = 1.25

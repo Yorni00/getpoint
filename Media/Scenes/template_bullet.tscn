@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0uxvpvwt5pa7"]
+
+[ext_resource type="Texture2D" uid="uid://bcl5mka8ijb4d" path="res://icon.svg" id="1_bvvde"]
+[ext_resource type="Script" path="res://Media/Scripts/template_bullet.gd" id="1_qrmbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37hjp"]
+size = Vector2(128, 20)
+
+[node name="template_bullet" type="CharacterBody2D"]
+script = ExtResource("1_qrmbp")
+
+[node name="texture" type="Sprite2D" parent="."]
+rotation = 1.57079
+scale = Vector2(0.142, 1)
+texture = ExtResource("1_bvvde")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_37hjp")
