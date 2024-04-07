@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqsjchjutrl6k"]
+
+[ext_resource type="Script" path="res://Media/Scripts/player.gd" id="1_3aa3u"]
+[ext_resource type="Texture2D" uid="uid://bcl5mka8ijb4d" path="res://icon.svg" id="1_di22u"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3aa3u")
+
+[node name="Base" type="Node2D" parent="."]
+z_index = 2
+rotation = 1.57079
+
+[node name="Hull" type="Sprite2D" parent="Base"]
+scale = Vector2(0.918311, 1.36141)
+texture = ExtResource("1_di22u")
+
+[node name="Turret" type="Node2D" parent="."]
+z_index = 3
+
+[node name="Head" type="Sprite2D" parent="Turret"]
+z_index = 4
+rotation = 1.57079
+scale = Vector2(0.733067, 0.809413)
+texture = ExtResource("1_di22u")
+
+[node name="Barrel" type="Sprite2D" parent="Turret"]
+position = Vector2(122, 0)
+rotation = 1.57079
+scale = Vector2(0.14155, -1.92074)
+texture = ExtResource("1_di22u")
+
+[node name="EndPoint" type="Node2D" parent="Turret/Barrel"]
+position = Vector2(0, 63)
