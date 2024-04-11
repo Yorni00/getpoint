@@ -1,37 +1,245 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhq5pscl50o35"]
 
 [ext_resource type="PackedScene" uid="uid://bqsjchjutrl6k" path="res://Media/Scenes/player.tscn" id="1_8ri14"]
-[ext_resource type="PackedScene" uid="uid://b0uxvpvwt5pa7" path="res://Media/Scenes/template_bullet.tscn" id="2_oeuxp"]
-[ext_resource type="Texture2D" uid="uid://bcl5mka8ijb4d" path="res://icon.svg" id="3_b6ajx"]
+[ext_resource type="Script" path="res://Media/Scripts/firstscene.gd" id="1_bopbu"]
+[ext_resource type="PackedScene" uid="uid://cjqv224r2w2ou" path="res://Media/Scenes/nav_reg.tscn" id="3_ey4bo"]
 
 [node name="firstscene" type="Node2D"]
+script = ExtResource("1_bopbu")
 
-[node name="Player" parent="." instance=ExtResource("1_8ri14")]
+[node name="Session" type="Node" parent="." groups=["Staged"]]
+
+[node name="Player" parent="Session" instance=ExtResource("1_8ri14")]
 position = Vector2(233, 313)
 
-[node name="template_bullet" parent="." instance=ExtResource("2_oeuxp")]
-position = Vector2(233, 173)
+[node name="NavRegs" type="Node2D" parent="Session"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(330, -91)
-texture = ExtResource("3_b6ajx")
+[node name="NavReg" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1.52588e-05, 7.62939e-06)
+scale = Vector2(5, 5)
 
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(663, 948)
-texture = ExtResource("3_b6ajx")
+[node name="NavReg2" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(320, 4.54747e-13)
+scale = Vector2(5, 5)
 
-[node name="Icon3" type="Sprite2D" parent="."]
-position = Vector2(1391, 496)
-texture = ExtResource("3_b6ajx")
+[node name="NavReg3" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(640, 2.71051e-20)
+scale = Vector2(5, 5)
 
-[node name="Icon4" type="Sprite2D" parent="."]
-position = Vector2(1063, -218)
-texture = ExtResource("3_b6ajx")
+[node name="NavReg4" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(960, 1.61559e-27)
+scale = Vector2(5, 5)
 
-[node name="Icon5" type="Sprite2D" parent="."]
-position = Vector2(2133, 981)
-texture = ExtResource("3_b6ajx")
+[node name="NavReg5" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(9.09495e-13, 320)
+scale = Vector2(5, 5)
 
-[node name="Icon6" type="Sprite2D" parent="."]
-position = Vector2(1928, -232)
-texture = ExtResource("3_b6ajx")
+[node name="NavReg8" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(960, 320)
+scale = Vector2(5, 5)
+
+[node name="NavReg9" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(5.42101e-20, 640)
+scale = Vector2(5, 5)
+
+[node name="NavReg10" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(320, 640)
+scale = Vector2(5, 5)
+
+[node name="NavReg11" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(640, 640)
+scale = Vector2(5, 5)
+
+[node name="NavReg12" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(960, 640)
+scale = Vector2(5, 5)
+
+[node name="NavReg6" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1280, -640)
+scale = Vector2(5, 5)
+
+[node name="NavReg7" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1600, -640)
+scale = Vector2(5, 5)
+
+[node name="NavReg13" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1920, -640)
+scale = Vector2(5, 5)
+
+[node name="NavReg14" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2240, -640)
+scale = Vector2(5, 5)
+
+[node name="NavReg15" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1280, -320)
+scale = Vector2(5, 5)
+
+[node name="NavReg16" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2240, -320)
+scale = Vector2(5, 5)
+
+[node name="NavReg17" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1280, -1.61559e-27)
+scale = Vector2(5, 5)
+
+[node name="NavReg18" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1600, -1.61559e-27)
+scale = Vector2(5, 5)
+
+[node name="NavReg19" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1920, -1.61559e-27)
+scale = Vector2(5, 5)
+
+[node name="NavReg20" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2240, -1.61559e-27)
+scale = Vector2(5, 5)
+
+[node name="NavReg21" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2240, 320)
+scale = Vector2(5, 5)
+
+[node name="NavReg22" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2560, 320)
+scale = Vector2(5, 5)
+
+[node name="NavReg23" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2880, 320)
+scale = Vector2(5, 5)
+
+[node name="NavReg24" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(3200, 320)
+scale = Vector2(5, 5)
+
+[node name="NavReg25" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2240, 640)
+scale = Vector2(5, 5)
+
+[node name="NavReg26" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(3200, 640)
+scale = Vector2(5, 5)
+
+[node name="NavReg27" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2240, 960)
+scale = Vector2(5, 5)
+
+[node name="NavReg28" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2560, 960)
+scale = Vector2(5, 5)
+
+[node name="NavReg29" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2880, 960)
+scale = Vector2(5, 5)
+
+[node name="NavReg30" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(3200, 960)
+scale = Vector2(5, 5)
+
+[node name="NavReg31" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1280, 1280)
+scale = Vector2(5, 5)
+
+[node name="NavReg32" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1600, 1280)
+scale = Vector2(5, 5)
+
+[node name="NavReg33" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1920, 1280)
+scale = Vector2(5, 5)
+
+[node name="NavReg34" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2240, 1280)
+scale = Vector2(5, 5)
+
+[node name="NavReg35" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1280, 1600)
+scale = Vector2(5, 5)
+
+[node name="NavReg36" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2240, 1600)
+scale = Vector2(5, 5)
+
+[node name="NavReg37" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1280, 1920)
+scale = Vector2(5, 5)
+
+[node name="NavReg38" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1600, 1920)
+scale = Vector2(5, 5)
+
+[node name="NavReg39" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(1920, 1920)
+scale = Vector2(5, 5)
+
+[node name="NavReg40" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(2240, 1920)
+scale = Vector2(5, 5)
+
+[node name="NavReg41" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(9.53674e-07, 1920)
+scale = Vector2(5, 5)
+
+[node name="NavReg42" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(320, 1920)
+scale = Vector2(5, 5)
+
+[node name="NavReg43" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(640, 1920)
+scale = Vector2(5, 5)
+
+[node name="NavReg44" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(960, 1920)
+scale = Vector2(5, 5)
+
+[node name="NavReg45" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(9.53674e-07, 2240)
+scale = Vector2(5, 5)
+
+[node name="NavReg46" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(960, 2240)
+scale = Vector2(5, 5)
+
+[node name="NavReg47" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(9.53674e-07, 2560)
+scale = Vector2(5, 5)
+
+[node name="NavReg48" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(320, 2560)
+scale = Vector2(5, 5)
+
+[node name="NavReg49" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(640, 2560)
+scale = Vector2(5, 5)
+
+[node name="NavReg50" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
+position = Vector2(960, 2560)
+scale = Vector2(5, 5)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Session"]
+path_max_distance = 500.0
+debug_enabled = true
+
+[node name="Save" type="Button" parent="."]
+offset_left = 374.0
+offset_top = 368.0
+offset_right = 562.0
+offset_bottom = 452.0
+text = "Save"
+
+[node name="Load" type="Button" parent="."]
+offset_left = 745.0
+offset_top = 366.0
+offset_right = 933.0
+offset_bottom = 450.0
+text = "Load
+"
+
+[node name="Delete" type="Button" parent="."]
+offset_left = 543.0
+offset_top = 515.0
+offset_right = 731.0
+offset_bottom = 599.0
+text = "Delete"
+
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]
