@@ -7,13 +7,14 @@ var T_Explosion = preload("res://Media/Scenes/explosion.tscn")
 @onready var Turret = $Turret
 @onready var eotb = $Turret/Barrel/EndPoint #End_of_the_barrel
 
-var Directed_Speed = 500
-var Rotation_Speed = 5
+var max_speed = 300
+var current_speed = 0
+var Rotation_Speed = 2
 var Rotation_Direction = 0
 
 func movement():
 	Rotation_Direction = Input.get_axis("a", "d")
-	velocity = transform.x * Input.get_axis("s","w") * Directed_Speed
+	velocity = transform.x * current_speed
 
 func spawn_bullet():
 	var bullet_instance = T_Bullet.instantiate()
@@ -31,6 +32,21 @@ func _ready():
 	
 
 func _process(delta):
+	if Input.is_action_pressed("w") and Input.is_action_pressed("s"):
+		if current_speed > 0:
+			current_speed -= 2
+		elif current_speed < 0:
+			current_speed += 2
+	elif not Input.is_action_pressed("w") and not Input.is_action_pressed("s"):
+		if current_speed > 0:
+			current_speed -= 2
+		elif current_speed < 0:
+			current_speed += 2
+	
+	if Input.is_action_pressed("w") and current_speed <= max_speed and not Input.is_action_pressed("s"):
+		current_speed += 2
+	if not Input.is_action_pressed("w") and current_speed >= -max_speed and Input.is_action_pressed("s"):
+		current_speed -= 2
 	Turret.look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("lbc"):
 		spawn_bullet()
