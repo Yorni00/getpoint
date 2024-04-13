@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var Cam = $Session/Camera2D
+@onready var Plr = $Session/Player
+
 func get_childs(_node):
 	var deti = _node.get_child_count()
 	var package = PackedScene.new()
@@ -8,6 +11,7 @@ func get_childs(_node):
 	return package
 
 func _process(delta):
+	Cam.position = Vector2((Plr.position.x + $Cursor.position.x)/2, (Plr.position.y + $Cursor.position.y)/2)
 	$Session/gmp.position = get_global_mouse_position()
 	$Cursor.position = get_global_mouse_position()
 	$Cursor/L_cd.text = str($Session/Player.cooldown/60)

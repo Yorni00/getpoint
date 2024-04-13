@@ -13,10 +13,6 @@ script = ExtResource("1_bopbu")
 [node name="Player" parent="Session" instance=ExtResource("1_8ri14")]
 position = Vector2(233, 313)
 
-[node name="Camera2D" type="Camera2D" parent="Session/Player"]
-zoom = Vector2(0.5, 0.5)
-position_smoothing_enabled = true
-
 [node name="NavRegs" type="Node2D" parent="Session"]
 
 [node name="NavReg" parent="Session/NavRegs" instance=ExtResource("3_ey4bo")]
@@ -219,11 +215,12 @@ scale = Vector2(5, 5)
 position = Vector2(960, 2560)
 scale = Vector2(5, 5)
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Session"]
-path_max_distance = 500.0
-debug_enabled = true
-
 [node name="gmp" type="Node2D" parent="Session"]
+
+[node name="Camera2D" type="Camera2D" parent="Session"]
+position = Vector2(233, 313)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
 
 [node name="Save" type="Button" parent="."]
 visible = false
