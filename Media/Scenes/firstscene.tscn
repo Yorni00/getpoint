@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhq5pscl50o35"]
+[gd_scene load_steps=5 format=3 uid="uid://dhq5pscl50o35"]
 
 [ext_resource type="PackedScene" uid="uid://bqsjchjutrl6k" path="res://Media/Scenes/player.tscn" id="1_8ri14"]
 [ext_resource type="Script" path="res://Media/Scripts/firstscene.gd" id="1_bopbu"]
 [ext_resource type="PackedScene" uid="uid://cjqv224r2w2ou" path="res://Media/Scenes/nav_reg.tscn" id="3_ey4bo"]
+[ext_resource type="Texture2D" uid="uid://d2t58qiwp3w06" path="res://Media/Images/0_krug-png_-2-tys-izobrazhenij-najdeno-v-YAndeks.Kartinkah.png" id="4_0qng7"]
 
 [node name="firstscene" type="Node2D"]
 script = ExtResource("1_bopbu")
@@ -11,6 +12,10 @@ script = ExtResource("1_bopbu")
 
 [node name="Player" parent="Session" instance=ExtResource("1_8ri14")]
 position = Vector2(233, 313)
+
+[node name="Camera2D" type="Camera2D" parent="Session/Player"]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
 
 [node name="NavRegs" type="Node2D" parent="Session"]
 
@@ -218,7 +223,10 @@ scale = Vector2(5, 5)
 path_max_distance = 500.0
 debug_enabled = true
 
+[node name="gmp" type="Node2D" parent="Session"]
+
 [node name="Save" type="Button" parent="."]
+visible = false
 offset_left = 374.0
 offset_top = 368.0
 offset_right = 562.0
@@ -226,6 +234,7 @@ offset_bottom = 452.0
 text = "Save"
 
 [node name="Load" type="Button" parent="."]
+visible = false
 offset_left = 745.0
 offset_top = 366.0
 offset_right = 933.0
@@ -234,11 +243,26 @@ text = "Load
 "
 
 [node name="Delete" type="Button" parent="."]
+visible = false
 offset_left = 543.0
 offset_top = 515.0
 offset_right = 731.0
 offset_bottom = 599.0
 text = "Delete"
+
+[node name="Cursor" type="Sprite2D" parent="."]
+z_index = 99
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_0qng7")
+
+[node name="L_cd" type="Label" parent="Cursor"]
+offset_left = 1180.0
+offset_top = -20.0005
+offset_right = 1190.0
+offset_bottom = 5.99951
+scale = Vector2(88.9045, 88.9045)
+pivot_offset = Vector2(4.58049, 12.5963)
+text = "9"
 
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Load" to="." method="_on_load_pressed"]

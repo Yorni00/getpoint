@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bay1q0f0qlu5k"]
+[gd_scene load_steps=3 format=3 uid="uid://bay1q0f0qlu5k"]
 
 [ext_resource type="Texture2D" uid="uid://bcl5mka8ijb4d" path="res://icon.svg" id="1_saa5p"]
+[ext_resource type="Script" path="res://Media/Scripts/explosion.gd" id="2_0hpp5"]
 
 [node name="Explosion" type="CPUParticles2D"]
 emitting = false
@@ -11,11 +12,12 @@ explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 1.0
 texture = ExtResource("1_saa5p")
-spread = 180.0
+spread = 5.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 350.0
-initial_velocity_max = 700.0
+initial_velocity_min = 1000.0
+initial_velocity_max = 2000.0
 angular_velocity_min = -0.1
 angular_velocity_max = 252.97
-scale_amount_min = 0.75
-scale_amount_max = 1.25
+scale_amount_min = 0.15
+scale_amount_max = 0.5
+script = ExtResource("2_0hpp5")

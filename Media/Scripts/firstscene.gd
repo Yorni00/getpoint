@@ -7,7 +7,10 @@ func get_childs(_node):
 		package.pack(_node.get_child(i))
 	return package
 
-
+func _process(delta):
+	$Session/gmp.position = get_global_mouse_position()
+	$Cursor.position = get_global_mouse_position()
+	$Cursor/L_cd.text = str($Session/Player.cooldown/60)
 
 
 func _on_save_pressed():

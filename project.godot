@@ -15,6 +15,10 @@ run/main_scene="res://Media/Scenes/firstscene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+mouse_cursor/custom_image="res://Media/Images/1x1_#7AA16F00.png"
+
 [input]
 
 w={
