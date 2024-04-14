@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqsjchjutrl6k"]
+[gd_scene load_steps=5 format=3 uid="uid://bqsjchjutrl6k"]
 
 [ext_resource type="Script" path="res://Media/Scripts/player.gd" id="1_3aa3u"]
 [ext_resource type="Texture2D" uid="uid://bcl5mka8ijb4d" path="res://icon.svg" id="1_di22u"]
+[ext_resource type="Texture2D" uid="uid://d2t58qiwp3w06" path="res://Media/Images/0_krug-png_-2-tys-izobrazhenij-najdeno-v-YAndeks.Kartinkah.png" id="3_6vi0a"]
+[ext_resource type="FontFile" uid="uid://buxvl1pvd1gn8" path="res://Media/System/IntroDemoCond-BlackCAPS.otf" id="4_r2tei"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3aa3u")
@@ -37,3 +39,32 @@ position = Vector2(0.00378418, -63.5086)
 rotation = -1.74533
 
 [node name="Aim" type="Node2D" parent="."]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cursor" type="Sprite2D" parent="GUI"]
+z_index = 99
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_6vi0a")
+
+[node name="L_cd" type="Label" parent="GUI/Cursor"]
+editor_description = "Label cooldown
+Не лсд)"
+offset_left = 880.0
+offset_top = -540.0
+offset_right = 939.0
+offset_bottom = -394.0
+scale = Vector2(8.82485, 8.82485)
+pivot_offset = Vector2(4.58049, 12.5963)
+theme_override_fonts/font = ExtResource("4_r2tei")
+theme_override_font_sizes/font_size = 114
+text = "9"
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(233, 313)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true

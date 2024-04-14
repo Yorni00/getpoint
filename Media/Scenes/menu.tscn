@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://l4tghopqtksr"]
+
+[ext_resource type="Script" path="res://Media/Scripts/menu.gd" id="1_6qto3"]
+[ext_resource type="FontFile" uid="uid://buxvl1pvd1gn8" path="res://Media/System/IntroDemoCond-BlackCAPS.otf" id="1_oha4y"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_6qto3")
+
+[node name="Name" type="Label" parent="."]
+offset_left = 368.0
+offset_top = 48.0
+offset_right = 795.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("1_oha4y")
+theme_override_font_sizes/font_size = 100
+text = "GetPoint"
+
+[node name="Play" type="Button" parent="."]
+offset_left = 368.0
+offset_top = 150.0
+offset_right = 795.0
+offset_bottom = 314.0
+scale = Vector2(0.503461, 0.503461)
+pivot_offset = Vector2(214, 82)
+theme_override_fonts/font = ExtResource("1_oha4y")
+theme_override_font_sizes/font_size = 70
+text = "Play"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

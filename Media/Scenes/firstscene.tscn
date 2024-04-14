@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhq5pscl50o35"]
+[gd_scene load_steps=4 format=3 uid="uid://dhq5pscl50o35"]
 
 [ext_resource type="PackedScene" uid="uid://bqsjchjutrl6k" path="res://Media/Scenes/player.tscn" id="1_8ri14"]
 [ext_resource type="Script" path="res://Media/Scripts/firstscene.gd" id="1_bopbu"]
 [ext_resource type="PackedScene" uid="uid://cjqv224r2w2ou" path="res://Media/Scenes/nav_reg.tscn" id="3_ey4bo"]
-[ext_resource type="Texture2D" uid="uid://d2t58qiwp3w06" path="res://Media/Images/0_krug-png_-2-tys-izobrazhenij-najdeno-v-YAndeks.Kartinkah.png" id="4_0qng7"]
 
 [node name="firstscene" type="Node2D"]
 script = ExtResource("1_bopbu")
@@ -217,11 +216,6 @@ scale = Vector2(5, 5)
 
 [node name="gmp" type="Node2D" parent="Session"]
 
-[node name="Camera2D" type="Camera2D" parent="Session"]
-position = Vector2(233, 313)
-zoom = Vector2(0.5, 0.5)
-position_smoothing_enabled = true
-
 [node name="Save" type="Button" parent="."]
 visible = false
 offset_left = 374.0
@@ -246,20 +240,6 @@ offset_top = 515.0
 offset_right = 731.0
 offset_bottom = 599.0
 text = "Delete"
-
-[node name="Cursor" type="Sprite2D" parent="."]
-z_index = 99
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("4_0qng7")
-
-[node name="L_cd" type="Label" parent="Cursor"]
-offset_left = 1180.0
-offset_top = -20.0005
-offset_right = 1190.0
-offset_bottom = 5.99951
-scale = Vector2(88.9045, 88.9045)
-pivot_offset = Vector2(4.58049, 12.5963)
-text = "9"
 
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
