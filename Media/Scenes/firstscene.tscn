@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhq5pscl50o35"]
+[gd_scene load_steps=5 format=3 uid="uid://dhq5pscl50o35"]
 
 [ext_resource type="PackedScene" uid="uid://bqsjchjutrl6k" path="res://Media/Scenes/player.tscn" id="1_8ri14"]
 [ext_resource type="Script" path="res://Media/Scripts/firstscene.gd" id="1_bopbu"]
 [ext_resource type="PackedScene" uid="uid://cjqv224r2w2ou" path="res://Media/Scenes/nav_reg.tscn" id="3_ey4bo"]
+[ext_resource type="PackedScene" uid="uid://cxpnx00lkcbg2" path="res://Media/Scenes/ammo_box_entity.tscn" id="4_emoif"]
 
 [node name="firstscene" type="Node2D"]
 script = ExtResource("1_bopbu")
@@ -240,6 +241,9 @@ offset_top = 515.0
 offset_right = 731.0
 offset_bottom = 599.0
 text = "Delete"
+
+[node name="AmmoBoxEntity" parent="." instance=ExtResource("4_emoif")]
+position = Vector2(573, -109)
 
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Load" to="." method="_on_load_pressed"]

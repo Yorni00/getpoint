@@ -10,6 +10,7 @@ var T_Explosion = preload("res://Media/Scenes/explosion.tscn")
 @onready var Cam = $Camera
 @onready var Cursor = $GUI/Cursor
 @onready var lcd = $GUI/Cursor/L_cd #Label cooldown
+@onready var la = $GUI/Cursor/L_a #Label ammos
 
 @export var cooldown = 0
 
@@ -19,6 +20,8 @@ var current_speed = 0
 var Rotation_Speed = 2
 var Rotation_Direction = 0
 var rot_dif = 0 #Rotation difference
+
+var ammunition = 0
 
 func SLA(object, delta):
 	var direction = get_global_mouse_position()
@@ -42,12 +45,13 @@ func spawn_explosion():
 	get_parent().add_child(ei)
 
 func _ready():
-	pass
+	ammunition = 8
 	
 
 func _process(delta):
 	Cursor.global_position = get_global_mouse_position()
 	lcd.text = str(cooldown/60)
+	la.text = str(ammunition)
 	if cooldown > 0:
 		cooldown -= 1
 	if true:
@@ -65,7 +69,8 @@ func _process(delta):
 			current_speed += 2
 		if not Input.is_action_pressed("w") and current_speed >= -max_speed/4 and Input.is_action_pressed("s"):
 			current_speed -= 2
-		if Input.is_action_just_pressed("lbc") and cooldown == 0:
+		if Input.is_action_just_pressed("lbc") and cooldown == 0 and ammunition > 0:
+			ammunition -= 1
 			spawn_bullet()
 			spawn_explosion()
 			$Turret/Texture/Barrel.position = Vector2($Turret/Texture/Barrel.position.x - 50,0)
@@ -87,3 +92,11 @@ func _physics_process(delta):
 	move_and_slide()
 	
 
+
+
+func _on_input_event(viewport, event, shape_idx):
+	event.queue_free()
+
+
+func _on_area_body_entered(body):
+	body.queue_free()
